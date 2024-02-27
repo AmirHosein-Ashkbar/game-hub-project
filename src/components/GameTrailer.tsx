@@ -1,3 +1,4 @@
+import { Spinner, Text } from '@chakra-ui/react';
 import useTrailer from '../hooks/useTrailers';
 
 interface Props{
@@ -7,9 +8,11 @@ interface Props{
 const GameTrailer = ({gameId}: Props) => {
     const {data, isLoading, error} = useTrailer(gameId);
 
-    if(isLoading) return null;
+    if(isLoading) return  <Spinner />;
     if(error) throw error;
 
+    if (data?.count === 0) return <Text>No trailer is available!</Text>
+    
     const first = data?.results[0];
     
 
