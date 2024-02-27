@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { ScreenShot } from "../entities/ScreenShot";
+import ScreenShot from "../entities/ScreenShot";
 import ApiClient from "../services/api-client";
 
 
